@@ -85,13 +85,56 @@ footer{background:#111a22;color:#cbd4db;padding:35px 6%;text-align:center;font-s
 <section class="quote" id="quote">
 <div class="wrap">
 <div class="heading"><div class="kicker">Get started</div><h2>Request a quote</h2><p>Tell us a little about the job and we'll get back to you.</p></div>
-<form action="mailto:Deluxemaintaingroup@gmail.com" method="post" enctype="text/plain">
-<label>Name<input name="Name" required></label>
-<label>Phone<input name="Phone" type="tel" required></label>
-<label>Email<input name="Email" type="email"></label>
-<label>Property type<select name="Property type"><option>Residential</option><option>Commercial</option><option>Rental / investment</option></select></label>
-<label class="full">Job details<textarea name="Job details" placeholder="Tell us what needs to be done, the suburb and any useful details..." required></textarea></label>
-<div class="full"><button class="btn" type="submit">Send Quote Request</button></div>
+<form action="https://formsubmit.co/deluxemaintaingroup@gmail.com" method="POST" enctype="multipart/form-data">
+
+  <input type="hidden" name="_subject" value="New Deluxe Maintenance Group Quote Request">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="true">
+
+  <label>
+    Name
+    <input name="Name" type="text" autocomplete="name" required>
+  </label>
+
+  <label>
+    Phone
+    <input name="Phone" type="tel" autocomplete="tel" required>
+  </label>
+
+  <label>
+    Email
+    <input name="Email" type="email" autocomplete="email" required>
+  </label>
+
+  <label>
+    Suburb
+    <input name="Suburb" type="text" autocomplete="address-level2" required>
+  </label>
+
+  <label>
+    Property type
+    <select name="Property type">
+      <option>Residential</option>
+      <option>Commercial</option>
+      <option>Rental / investment</option>
+    </select>
+  </label>
+
+  <label>
+    Photos
+    <input name="attachment" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+    <div class="form-help">Optional. Up to 10MB total.</div>
+  </label>
+
+  <label class="full">
+    Job details
+    <textarea name="Job details" placeholder="Tell us what needs to be done and any useful details..." required></textarea>
+  </label>
+
+  <div class="full">
+    <button class="btn" type="submit">Send Quote Request</button>
+  </div>
+
 </form>
 </div>
 </section>
